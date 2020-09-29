@@ -5,11 +5,14 @@ function findMatching(drivers,name){
   })
 }
 
-function fuzzyMatch(drivers,firstLetter){
-  return drivers.filter(function (fLetter){
-    {return fLetter.charAt(length-1) === firstLetter.charAt(length-1)
-    }}
 
+
+function fuzzyMatch(drivers, firstLetter) {
+  let nameLength = firstLetter.length;
+  return drivers.filter(function (driverName) {
+    return driverName.slice(0, nameLength) === firstLetter;
+  });
+}
 
  function  matchName(drivers,name){
      return drivers.filter(function (driver) {
